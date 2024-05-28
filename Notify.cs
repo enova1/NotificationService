@@ -10,6 +10,8 @@ public class Notify(ILogger<Notify> logger) : INotify
     /// <param name="message"></param>
     public void ProcessingCompletion(string message)
     {
-        logger.LogInformation($"Completed: {message}");
+        Console.WriteLine($"=========");
+        Console.WriteLine($"{message}");
+        logger.LogInformation(message);
     }
 }
