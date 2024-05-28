@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 
+#pragma warning disable CA2254
+
 namespace NotificationService;
 
 public class Notify(ILogger<Notify> logger) : INotify
@@ -11,7 +13,6 @@ public class Notify(ILogger<Notify> logger) : INotify
     public void ProcessingCompletion(string message)
     {
         Console.WriteLine($"=========");
-        Console.WriteLine($"{message}");
         logger.LogInformation(message);
     }
 }
