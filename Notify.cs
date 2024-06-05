@@ -1,10 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿namespace NotificationService;
 
-#pragma warning disable CA2254
-
-namespace NotificationService;
-
-public class Notify(ILogger<Notify> logger) : INotify
+public class Notify() : INotify
 {
     /// <summary>
     /// Notifies the completion of a Hangfire process
@@ -13,6 +9,6 @@ public class Notify(ILogger<Notify> logger) : INotify
     public void ProcessingCompletion(string message)
     {
         Console.WriteLine($"=========");
-        logger.LogInformation(message);
+        Console.WriteLine(message);
     }
 }
